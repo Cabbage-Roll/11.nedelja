@@ -95,7 +95,28 @@ public:/*
         cout<<"velicina "<<velicina<<endl;
         cout<<"tip "<<tip<<endl;
     }
+};
 
+class Prodavnica{
+private:
+    DinString naziv;
+    List <Proizvod*> ol;
+
+public:
+    Prodavnica(DinString n){
+        naziv=n;
+    }
+    
+    bool dodajProizvod(Proizvod &p){
+        int i, Proizvod temp;
+        for(i=0;i<=ol.size();i++){
+            ol.read(i,temp);
+            if(temp.naziv==p.naziv)
+                return false;
+        }
+        ol.add(ol.size()+1,p);
+        return true;
+    }
 
 };
 
