@@ -106,7 +106,7 @@ public:
     Prodavnica(DinString n){
         naziv=n;
     }
-    
+
     bool dodajProizvod(Proizvod &p){
         int i, Proizvod temp;
         for(i=0;i<=ol.size();i++){
@@ -118,6 +118,54 @@ public:
         return true;
     }
 
+    bool obrisiProizvod(DinString n){
+        int i, Proizvod temp;
+        for(i=0;i<ol.size();i++){
+            ol.read(i,temp);
+            if(temp.naziv==n)
+                ol.remove(i);
+                return true;
+        }
+        return false;
+    }
+
+    void obrisiProizvod(int i){
+        ol.remove(i);
+    }
+
+    /*void akcija()
+
+    */
+
+    ///operator ispisa
+};
+
+class Grad{
+private:
+    DinString naziv;
+    List <Prodavnica*> pl;
+
+public:
+    Grad(){
+        naziv="Novi Sad";
+    }
+
+    Grad(DinString g){
+        grad=g;
+    }
+
+    void dodajProdavnicu(Prodavnica &p){
+        ol.add(ol.size()+1,p);
+    }
+    ///da dovrsim
+    void ispisiNajjeftinijuProdavnicu(){
+        int i, j;
+        Prodavnica temp;
+        for(i=0;i<pl.size();i++){
+            pl.read(i+1,temp);
+            for(j=0;j<)
+        }
+    }
 };
 
 
